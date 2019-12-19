@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block info %}
+<div id="pages">
+{% for p in pages %}
+    <img src="{{ p.image.url }}">
+{% endfor %}
+</div>
+{% if user.is_authenticated %}
+<div class="add"><span>Добавить страницу</span></div>
+<form class="ticket_form" method="post" action="mp_add" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Добавить"></p>
+</form>
+{% endif %}
+{% endblock %}
+{% block extrajs %}
+<script>
+    $('#id_ticket').val('{{ id }}')
+    $('#id_pos').val($('#pages img').length.toString())
+</script>
+{% endblock %}
