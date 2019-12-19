@@ -37,4 +37,6 @@ def page_add(request):
                     p.pos = p.pos + 1
                     p.save()
         page.save()
-    return redirect('/')
+        return redirect('/maths/'+str(page.ticket.num))
+    return redirect('/maths/')
+
