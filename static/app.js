@@ -33,4 +33,13 @@ $(document).ready(function() {
         $(this).hide();
         $('form').show();
     });
+
+    $('.list-min>li').on('click', function() {
+    	let d = $(this).next();
+    	if (d.css('display') == 'none') {
+    		d.show();
+    	} else {
+    		d.hide();
+    	}
+    });
 });

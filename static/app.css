@@ -126,3 +126,25 @@
 .ticket_form p input[type="submit"] {
     background: #6495ED;
 }
+
+.list-min {
+    padding: 0 10px 0 30px;
+    text-align: justify;
+}
+.list-min>li{
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+}
+.list-min>li:hover{
+    text-decoration: underline;
+}
+.list-min>div{
+    display: none;
+    overflow: hidden;
+}
+
+ul {
+    padding-left: 16px;
+}
