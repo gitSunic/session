@@ -34,6 +34,13 @@ $(document).ready(function() {
         $('form').show();
     });
 
+    $('.list-min>div').each(function() {
+    	let d = $(this);
+    	if (d.html() == '') {
+    		d.prev().css('color', 'red');
+    	}
+    });
+
     $('.list-min>li').on('click', function() {
     	let d = $(this).next();
     	if (d.css('display') == 'none') {

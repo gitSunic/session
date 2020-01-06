@@ -14,7 +14,6 @@ def m_start(request):
 def ticket_view(request, id):
     pages = MathImg.objects.filter(ticket__num=id).order_by('pos')
     form = MathImgForm()
-    print(form)
     return render(request, 'maths/watch.html', {'pages': pages, 'form': form, 'id': Ticket.objects.get(num=id).id})
 
 
@@ -27,7 +26,6 @@ def ticket_add(request):
 
 def page_add(request):
     if request.POST:
-        print(request.POST)
         form = MathImgForm(request.POST, request.FILES)
         page = form.save(commit=False)
         pages = MathImg.objects.filter(ticket__num=page.ticket.num).order_by('pos')
