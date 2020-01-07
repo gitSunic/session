@@ -44,7 +44,7 @@
     text-decoration: none;
 }
 
-#search {
+#search, #search-min {
     width: 100%;
     background: #fff;
     font-size: 15px;
@@ -56,8 +56,12 @@
     border: 1px solid #6495ED;
     margin-bottom: 10px;
 }
-#search:focus {
+#search:focus, #search-min:focus {
     outline: none;
+}
+#search-min {
+    width: calc(100% - 40px);
+    margin: 5px 20px;
 }
 
 .list {
@@ -128,7 +132,7 @@
 }
 
 .list-min {
-    padding: 0 10px 0 30px;
+    padding: 0 10px 0 40px;
     text-align: justify;
 }
 .list-min>li{
