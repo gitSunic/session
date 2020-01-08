@@ -2,8 +2,23 @@ from django.shortcuts import render, redirect
 from .models import Ticket, MathImg
 from .forms import TicketForm, MathImgForm
 
+import datetime
+import threading
+
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    f = open('history.txt', 'a')
+    f.write(datetime.datetime.now().strftime("%d/%m/%y %H:%M:%S") + ' - ' + ip + '\n')
+    f.close()
+
 
 def m_start(request):
+    threading.Thread(target=get_client_ip, args=(request,)).start()
     tickets = []
     for t in Ticket.objects.all():
         tickets.append({'id': t.num, 'str': str(t)})
