@@ -8,3 +8,4 @@ db.sqlite3
 media
 session/settings.py
 history.txt
+myip.txt
