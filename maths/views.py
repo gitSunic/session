@@ -54,4 +54,3 @@ def page_add(request):
         page.save()
         return redirect('/maths/'+str(page.ticket.num))
     return redirect('/maths/')
-

@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 {% block info %}
+<div class="min"><a href="min">Минимум</a></div>
 <div class="list">
-    <div class="item"><a href="min">Минимум</a></div>
+    <input type="text" id="search" placeholder="Начните поиск...">
+    {% for t in tickets %}
+    <div class="item"><a href="{{ t.id}} ">{{ t.str }}</a></div>
+    {% endfor %}
 </div>
+{% if user.is_authenticated %}
+<div class="add"><span>Добавить билет</span></div>
+<form class="ticket_form" method="post" action="t_add">{% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Добавить"></p>
+</form>
+{% endif %}
 {% endblock %}
