@@ -67,7 +67,7 @@ $(document).ready(function() {
 		}
 	});
 
-    $('.menu-head').on('click', function() {
+    $('.menu-head, .menu-icon').on('click', function() {
         if ($('.menu-item').css('display') != 'none') {
             $('.menu-item').slideUp(200);
         }

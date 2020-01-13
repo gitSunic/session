@@ -43,6 +43,11 @@
 .menu-item a:hover, .menu-item a:active {
     text-decoration: none;
 }
+.menu-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
 
 #search, #search-min {
     width: 100%;
