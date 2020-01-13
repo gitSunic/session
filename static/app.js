@@ -4,18 +4,31 @@ $(document).ready(function() {
 		if (poisk.length > 0) {
 			$('.item').each(function() {
 				var t = $(this);
-				var name = $(this).text();
+				var name = t.children('a').text();
 				var i = name.toLowerCase().indexOf(poisk);
 				if (i != -1) {
+					let up = name.substr(i, poisk.length);
+					let span = '<span class="y">' + up + '</span>';
+					let rename = name.replace(up, span);
+					t.children('a').html(rename);
 					t.show();
 				} else {
+					let bac = t.children('span').text();
+					let span = '<span class="y">' + bac + '</span>';
+					let rename = name.replace(span, bac);
+					t.children('a').html(rename);
 					t.hide();
 				}
 			});
 		} else {
 			$('.item').each(function() {
 				var t = $(this);
-				$(this).show();
+				let name = $(this).text();
+				let bac = t.children('span').text();
+				let span = '<span class="y">' + bac + '</span>';
+				let rename = name.replace(span, bac);
+				t.children('a').html(rename);
+				t.show();
 			});
 		}
 	});
@@ -29,13 +42,13 @@ $(document).ready(function() {
 				var i = name.toLowerCase().indexOf(poisk);
 				if (i != -1) {
 					let up = name.substr(i, poisk.length);
-					let span = '<span style="background: #ffff00;">' + up + '</span>';
+					let span = '<span class="y">' + up + '</span>';
 					let rename = name.replace(up, span);
 					t.html(rename);
 					t.show();
 				} else {
 					let bac = t.children('span').text();
-					let span = '<span style="background: #ffff00;">' + bac + '</span>';
+					let span = '<span class="y">' + bac + '</span>';
 					let rename = name.replace(span, bac);
 					t.html(rename);
 					t.hide();
@@ -46,10 +59,10 @@ $(document).ready(function() {
 				var t = $(this);
 				let name = $(this).text();
 				let bac = t.children('span').text();
-				let span = '<span style="background: #ffff00;">' + bac + '</span>';
+				let span = '<span class="y">' + bac + '</span>';
 				let rename = name.replace(span, bac);
 				t.html(rename);
-				$(this).show();
+				t.show();
 			});
 		}
 	});

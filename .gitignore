@@ -9,3 +9,4 @@ media
 session/settings.py
 history.txt
 myip.txt
+static/app.js
