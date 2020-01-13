@@ -28,14 +28,27 @@ $(document).ready(function() {
 				var name = $(this).text();
 				var i = name.toLowerCase().indexOf(poisk);
 				if (i != -1) {
+					let up = name.substr(i, poisk.length);
+					let span = '<span style="background: #ffff00;">' + up + '</span>';
+					let rename = name.replace(up, span);
+					t.html(rename);
 					t.show();
 				} else {
+					let bac = t.children('span').text();
+					let span = '<span style="background: #ffff00;">' + bac + '</span>';
+					let rename = name.replace(span, bac);
+					t.html(rename);
 					t.hide();
 				}
 			});
 		} else {
 			$('.list-min>li').each(function() {
 				var t = $(this);
+				let name = $(this).text();
+				let bac = t.children('span').text();
+				let span = '<span style="background: #ffff00;">' + bac + '</span>';
+				let rename = name.replace(span, bac);
+				t.html(rename);
 				$(this).show();
 			});
 		}
