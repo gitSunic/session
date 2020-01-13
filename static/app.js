@@ -96,4 +96,9 @@ $(document).ready(function() {
     		d.hide();
     	}
     });
+
+    $('.add_feed').on('click', function() {
+    	$(this).hide();
+    	$('.feedback_form').show();
+    });
 });

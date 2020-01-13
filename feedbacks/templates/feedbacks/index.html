@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block info %}
+<div style="width: 80%;margin: 5px auto 10px;">
+	<div class="add_feed">Добавить отзыв</div>
+</div>
+<form class="feedback_form" method="post" action="f_add">{% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Добавить"></p>
+</form>
+{% for f in fbs %}
+<div class="feedback">
+	<p class="head"><span>{{f.name}}</span><span>{{f.date|date:"H:i d/m"}}</span></p>
+	<p class="content">{{f.content}}</p>
+</div>
+{% endfor %}
+{% endblock %}

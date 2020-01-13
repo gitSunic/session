@@ -121,22 +121,74 @@ span.y {
     border: 1px solid #6495ED;
 }
 
-.ticket_form {
+.ticket_form, .feedback_form {
     display: none;
-    padding: 0 20px;
+    width: 80%;
+    margin: 0 auto;
 }
-.ticket_form p label{
+.ticket_form p label, .feedback_form p label{
     display: none;
 }
-.ticket_form p input{
+.ticket_form p input, .feedback_form p input{
     font-size: 15px;
     width: 100%;
     padding: 5px 10px;
     border-radius: 8px;
     border: 1px solid #6495ED;
 }
-.ticket_form p input[type="submit"] {
+.feedback_form p textarea {
+    font-size: 15px;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 8px;
+    height: 100px;
+    border: 1px solid #6495ED;
+}
+.feedback_form p textarea:focus {
+    outline: none;
+}
+.ticket_form p input[type="submit"], .feedback_form p input[type="submit"]{
     background: #6495ED;
+}
+.add_feed {
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #6495ED;
+    color: #6495ED;
+}
+
+.feedback {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #eee;
+    margin-bottom: 5px;
+}
+.feedback .head {
+    display: flex;
+    justify-content: space-between;
+}
+.feedback .head span {
+    display: block;
+    margin: 0 15px;
+}
+.feedback .head span:first-child {
+    color: #6495ED;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.feedback .head span:last-child {
+    color: darkgray;
+}
+.feedback .content {
+    display: block;
+    margin: 0 3px;
+    color: #666666;
 }
 
 .list-min {

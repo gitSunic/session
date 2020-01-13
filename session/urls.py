@@ -8,5 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('maths/',  include('maths.urls')),
     path('physics/', include('physics.urls')),
+    path('feedback/', include('feedbacks.urls')),
     path('', lambda request: redirect('maths/', permanent=False)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
