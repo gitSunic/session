@@ -19,7 +19,7 @@ def get_client_ip(request, name='main'):
 
 
 def m_start(request):
-    threading.Thread(target=get_client_ip, args=(request, 'maths')).start()
+    # threading.Thread(target=get_client_ip, args=(request, 'maths')).start()
     tickets = []
     for t in Ticket.objects.all():
         tickets.append({'id': t.num, 'str': str(t)})
@@ -28,7 +28,6 @@ def m_start(request):
 
 
 def ticket_view(request, id):
-    threading.Thread(target=get_client_ip, args=(request, 'maths_ticket')).start()
     pages = MathImg.objects.filter(ticket__num=id).order_by('pos')
     form = MathImgForm()
     return render(request, 'maths/watch.html', {'pages': pages, 'form': form, 'id': Ticket.objects.get(num=id).id})
