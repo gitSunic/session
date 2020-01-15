@@ -9,7 +9,7 @@
 </form>
 {% for f in fbs %}
 <div class="feedback">
-	<p class="head"><span>{{f.name}}</span><span>{{f.date|date:"H:i d/m"}}</span></p>
+	<p class="head"><span>{{f.name}}</span><span>{{f.date|date:"d/m H:i"}}</span></p>
 	<p class="content">{{f.content}}</p>
 </div>
 {% endfor %}
