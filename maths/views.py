@@ -3,7 +3,6 @@ from .models import Ticket, MathImg
 from .forms import TicketForm, MathImgForm
 
 import datetime
-import threading
 
 
 def get_client_ip(request, name='main'):

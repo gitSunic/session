@@ -3,7 +3,7 @@ from django.db import models
 
 class Ticket(models.Model):
     num = models.IntegerField(unique=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = 'Билет'
